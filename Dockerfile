@@ -12,7 +12,10 @@ RUN apk update && \
     cp -a /etc/ssh /etc/ssh.cache && \
     rm -rf /var/cache/apk/*
 
+RUN echo GatewayPorts yes >> /etc/ssh/sshd_config
+
 EXPOSE 22
+EXPOSE 80
 
 COPY entry.sh /entry.sh
 
